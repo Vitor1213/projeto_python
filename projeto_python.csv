@@ -1,0 +1,101 @@
+ID_Venda,Data_Venda,Cliente,Categoria,Produto,Quantidade,Preço_Unitario,Canal_Venda,Cidade,Status,Receita_Total
+1,01/01/2025,Cliente C,Eletrônicos,Notebook,6,4662.43,E-commerce,Bahia,Pendente,27974.58
+2,02/01/2025,Cliente E,Alimentos,Macarrão,16,2941.59,Instagram,Minas Gerais,Concluída,47065.44
+3,03/01/2025,Cliente C,Móveis,Sofá,15,4741.78,E-commerce,Rio de Janeiro,Devolvida,71126.7
+4,04/01/2025,Cliente B,Brinquedos,Boneca,10,2784.61,E-commerce,Paraná,Pendente,27846.1
+5,05/01/2025,Cliente D,Eletrônicos,TV,18,2507.8,Loja Física,Minas Gerais,Pendente,45140.4
+6,06/01/2025,Cliente C,Móveis,Mesa,6,27.63,WhatsApp,São Paulo,Pendente,165.78
+7,07/01/2025,Cliente D,Alimentos,Feijão,7,2409.64,Loja Física,Paraná,Devolvida,16867.48
+8,08/01/2025,Cliente B,Alimentos,Arroz,5,4638.0,WhatsApp,São Paulo,Pendente,23190.0
+9,09/01/2025,Cliente B,Brinquedos,Carrinho,8,999.84,E-commerce,Bahia,Cancelada,7998.72
+10,10/01/2025,Cliente A,Alimentos,Arroz,14,269.93,E-commerce,Rio de Janeiro,Pendente,3779.02
+11,11/01/2025,Cliente B,Eletrônicos,TV,18,2039.83,WhatsApp,Bahia,Cancelada,36716.94
+12,12/01/2025,Cliente B,Alimentos,Macarrão,15,1868.26,E-commerce,Rio de Janeiro,Concluída,28023.9
+13,13/01/2025,Cliente A,Brinquedos,Lego,7,4287.19,Instagram,Minas Gerais,Pendente,30010.33
+14,14/01/2025,Cliente A,Brinquedos,Lego,1,142.79,Instagram,Paraná,Concluída,142.79
+15,15/01/2025,Cliente B,Eletrônicos,TV,2,4601.54,E-commerce,São Paulo,Concluída,9203.08
+16,16/01/2025,Cliente D,Cosméticos,Creme,4,3407.71,WhatsApp,Minas Gerais,Pendente,13630.84
+17,17/01/2025,Cliente E,Móveis,Mesa,1,4522.09,E-commerce,São Paulo,Cancelada,4522.09
+18,18/01/2025,Cliente A,Roupas,Jaqueta,9,3041.57,Instagram,Rio de Janeiro,Concluída,27374.13
+19,19/01/2025,Cliente A,Eletrônicos,Smartphone,14,4061.65,E-commerce,São Paulo,Pendente,56863.1
+20,20/01/2025,Cliente E,Alimentos,Arroz,6,1684.36,Instagram,Bahia,Devolvida,10106.16
+21,21/01/2025,Cliente B,Alimentos,Arroz,18,1754.34,Loja Física,São Paulo,Devolvida,31578.12
+22,22/01/2025,Cliente D,Eletrônicos,Notebook,3,1955.47,Instagram,Rio de Janeiro,Concluída,5866.41
+23,23/01/2025,Cliente C,Roupas,Calça,3,3776.44,E-commerce,São Paulo,Concluída,11329.32
+24,24/01/2025,Cliente E,Roupas,Camiseta,14,1852.76,Instagram,Paraná,Pendente,25938.64
+25,25/01/2025,Cliente C,Alimentos,Arroz,1,1218.68,Loja Física,Rio de Janeiro,Devolvida,1218.68
+26,26/01/2025,Cliente E,Eletrônicos,Notebook,15,4688.97,WhatsApp,Paraná,Concluída,70334.55
+27,27/01/2025,Cliente A,Roupas,Calça,3,4540.98,Instagram,Minas Gerais,Pendente,13622.94
+28,28/01/2025,Cliente A,Roupas,Camiseta,15,1750.5,WhatsApp,Paraná,Cancelada,26257.5
+29,29/01/2025,Cliente B,Alimentos,Macarrão,15,3176.84,WhatsApp,Minas Gerais,Cancelada,47652.6
+30,30/01/2025,Cliente D,Móveis,Sofá,1,1376.47,WhatsApp,Rio de Janeiro,Devolvida,1376.47
+31,31/01/2025,Cliente E,Roupas,Jaqueta,19,1038.51,E-commerce,São Paulo,Pendente,19731.69
+32,01/02/2025,Cliente E,Móveis,Sofá,1,1688.33,Instagram,Rio de Janeiro,Pendente,1688.33
+33,02/02/2025,Cliente E,Alimentos,Feijão,4,1642.23,E-commerce,Bahia,Cancelada,6568.92
+34,03/02/2025,Cliente B,Roupas,Jaqueta,10,4412.56,Instagram,Rio de Janeiro,Cancelada,44125.6
+35,04/02/2025,Cliente D,Alimentos,Feijão,16,4113.3,E-commerce,Rio de Janeiro,Pendente,65812.8
+36,05/02/2025,Cliente C,Cosméticos,Perfume,17,3551.02,WhatsApp,Bahia,Cancelada,60367.34
+37,06/02/2025,Cliente B,Alimentos,Arroz,11,4797.13,WhatsApp,Bahia,Cancelada,52768.43
+38,07/02/2025,Cliente E,Brinquedos,Lego,15,2118.49,WhatsApp,Rio de Janeiro,Concluída,31777.35
+39,08/02/2025,Cliente A,Roupas,Calça,16,1232.71,Loja Física,Bahia,Cancelada,19723.36
+40,09/02/2025,Cliente D,Cosméticos,Perfume,7,595.82,E-commerce,Rio de Janeiro,Devolvida,4170.74
+41,10/02/2025,Cliente C,Roupas,Jaqueta,1,1512.26,WhatsApp,Rio de Janeiro,Concluída,1512.26
+42,11/02/2025,Cliente A,Cosméticos,Shampoo,8,734.87,Loja Física,Bahia,Devolvida,5878.96
+43,12/02/2025,Cliente D,Cosméticos,Shampoo,14,470.01,WhatsApp,Minas Gerais,Cancelada,6580.14
+44,13/02/2025,Cliente C,Brinquedos,Carrinho,2,3018.63,E-commerce,Bahia,Concluída,6037.26
+45,14/02/2025,Cliente C,Brinquedos,Carrinho,17,1827.3,Instagram,São Paulo,Concluída,31064.1
+46,15/02/2025,Cliente C,Cosméticos,Shampoo,2,2827.21,WhatsApp,Minas Gerais,Concluída,5654.42
+47,16/02/2025,Cliente C,Brinquedos,Boneca,8,964.77,Loja Física,São Paulo,Cancelada,7718.16
+48,17/02/2025,Cliente E,Brinquedos,Lego,6,3387.76,E-commerce,Bahia,Pendente,20326.56
+49,18/02/2025,Cliente D,Brinquedos,Carrinho,17,1085.37,Instagram,Bahia,Devolvida,18451.29
+50,19/02/2025,Cliente D,Cosméticos,Shampoo,5,1397.34,E-commerce,Rio de Janeiro,Pendente,6986.7
+51,20/02/2025,Cliente E,Cosméticos,Shampoo,6,3711.38,Instagram,São Paulo,Pendente,22268.28
+52,21/02/2025,Cliente E,Móveis,Cadeira,18,2803.09,Loja Física,Bahia,Concluída,50455.62
+53,22/02/2025,Cliente D,Brinquedos,Boneca,15,1680.83,Instagram,Bahia,Devolvida,25212.45
+54,23/02/2025,Cliente C,Alimentos,Feijão,1,2719.51,Instagram,Bahia,Devolvida,2719.51
+55,24/02/2025,Cliente A,Eletrônicos,Smartphone,2,3472.98,Loja Física,São Paulo,Concluída,6945.96
+56,25/02/2025,Cliente E,Roupas,Calça,9,4561.54,E-commerce,Bahia,Cancelada,41053.86
+57,26/02/2025,Cliente D,Eletrônicos,Notebook,9,2907.76,Instagram,Paraná,Pendente,26169.84
+58,27/02/2025,Cliente B,Eletrônicos,TV,15,1171.11,WhatsApp,Paraná,Cancelada,17566.65
+59,28/02/2025,Cliente D,Móveis,Mesa,12,3736.02,Instagram,Bahia,Pendente,44832.24
+60,01/03/2025,Cliente C,Roupas,Calça,8,3891.07,E-commerce,Minas Gerais,Devolvida,31128.56
+61,02/03/2025,Cliente B,Roupas,Calça,16,1010.0,Instagram,São Paulo,Concluída,16160.0
+62,03/03/2025,Cliente C,Alimentos,Arroz,13,4104.67,E-commerce,Rio de Janeiro,Pendente,53360.71
+63,04/03/2025,Cliente E,Roupas,Camiseta,3,2330.02,Loja Física,Minas Gerais,Devolvida,6990.06
+64,05/03/2025,Cliente A,Eletrônicos,Notebook,1,3901.04,WhatsApp,Paraná,Devolvida,3901.04
+65,06/03/2025,Cliente B,Roupas,Jaqueta,1,1195.02,E-commerce,São Paulo,Pendente,1195.02
+66,07/03/2025,Cliente E,Brinquedos,Lego,10,1669.58,Instagram,Rio de Janeiro,Cancelada,16695.8
+67,08/03/2025,Cliente C,Cosméticos,Creme,10,4768.95,WhatsApp,Paraná,Cancelada,47689.5
+68,09/03/2025,Cliente B,Móveis,Mesa,13,3292.5,Loja Física,Bahia,Cancelada,42802.5
+69,10/03/2025,Cliente B,Brinquedos,Boneca,11,3866.66,WhatsApp,Bahia,Concluída,42533.26
+70,11/03/2025,Cliente D,Eletrônicos,Smartphone,6,3444.99,WhatsApp,Rio de Janeiro,Pendente,20669.94
+71,12/03/2025,Cliente E,Alimentos,Arroz,4,1029.48,E-commerce,São Paulo,Pendente,4117.92
+72,13/03/2025,Cliente B,Brinquedos,Lego,6,2358.74,Instagram,Rio de Janeiro,Concluída,14152.44
+73,14/03/2025,Cliente A,Roupas,Calça,6,4046.73,E-commerce,Rio de Janeiro,Pendente,24280.38
+74,15/03/2025,Cliente A,Roupas,Calça,19,3378.43,Instagram,Minas Gerais,Concluída,64190.17
+75,16/03/2025,Cliente D,Cosméticos,Shampoo,3,40.08,Loja Física,Bahia,Pendente,120.24
+76,17/03/2025,Cliente B,Alimentos,Macarrão,8,446.16,Loja Física,Bahia,Pendente,3569.28
+77,18/03/2025,Cliente D,Eletrônicos,Notebook,18,1740.51,E-commerce,Paraná,Concluída,31329.18
+78,19/03/2025,Cliente D,Alimentos,Macarrão,10,4722.38,E-commerce,Minas Gerais,Pendente,47223.8
+79,20/03/2025,Cliente D,Móveis,Sofá,15,2461.04,Loja Física,Bahia,Cancelada,36915.6
+80,21/03/2025,Cliente B,Brinquedos,Lego,3,1358.18,WhatsApp,Minas Gerais,Devolvida,4074.54
+81,22/03/2025,Cliente B,Alimentos,Arroz,18,1808.51,Loja Física,São Paulo,Cancelada,32553.18
+82,23/03/2025,Cliente C,Cosméticos,Creme,9,1061.16,Instagram,Minas Gerais,Pendente,9550.44
+83,24/03/2025,Cliente D,Eletrônicos,Notebook,17,2111.79,Loja Física,Bahia,Devolvida,35900.43
+84,25/03/2025,Cliente D,Roupas,Camiseta,19,1098.0,WhatsApp,Rio de Janeiro,Concluída,20862.0
+85,26/03/2025,Cliente D,Brinquedos,Lego,4,4230.31,Instagram,São Paulo,Concluída,16921.24
+86,27/03/2025,Cliente D,Brinquedos,Carrinho,8,2286.79,E-commerce,São Paulo,Cancelada,18294.32
+87,28/03/2025,Cliente A,Brinquedos,Carrinho,10,1406.21,E-commerce,Bahia,Pendente,14062.1
+88,29/03/2025,Cliente B,Cosméticos,Perfume,11,4665.13,E-commerce,Minas Gerais,Pendente,51316.43
+89,30/03/2025,Cliente D,Brinquedos,Carrinho,19,1578.61,WhatsApp,Rio de Janeiro,Concluída,29993.59
+90,31/03/2025,Cliente B,Roupas,Camiseta,8,4549.48,WhatsApp,Bahia,Cancelada,36395.84
+91,01/04/2025,Cliente E,Eletrônicos,TV,10,226.66,WhatsApp,São Paulo,Devolvida,2266.6
+92,02/04/2025,Cliente D,Roupas,Calça,16,3538.5,E-commerce,São Paulo,Concluída,56616.0
+93,03/04/2025,Cliente B,Móveis,Mesa,8,2424.61,Loja Física,São Paulo,Pendente,19396.88
+94,04/04/2025,Cliente C,Alimentos,Macarrão,18,2226.66,WhatsApp,São Paulo,Devolvida,40079.88
+95,05/04/2025,Cliente D,Cosméticos,Shampoo,14,191.25,WhatsApp,São Paulo,Cancelada,2677.5
+96,06/04/2025,Cliente E,Brinquedos,Lego,13,213.01,Loja Física,Minas Gerais,Pendente,2769.13
+97,07/04/2025,Cliente D,Eletrônicos,Smartphone,15,1670.44,Instagram,Rio de Janeiro,Pendente,25056.6
+98,08/04/2025,Cliente B,Eletrônicos,Smartphone,8,4736.13,Instagram,Minas Gerais,Cancelada,37889.04
+99,09/04/2025,Cliente A,Eletrônicos,TV,16,3092.12,Instagram,Rio de Janeiro,Devolvida,49473.92
+100,10/04/2025,Cliente A,Roupas,Camiseta,8,1850.69,WhatsApp,Minas Gerais,Concluída,14805.52
