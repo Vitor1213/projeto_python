@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # --- Carregamento dos dados ---
-df = pd.read_csv("https://github.com/Vitor1213/projeto_python/blob/main/projeto_python.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Vitor1213/projeto_python/main/projeto_python.csv")
 
 # --- Barra Lateral (Filtros) ---
 st.sidebar.header("🔍 Filtros")
@@ -73,19 +73,19 @@ col_graf1, col_graf2 = st.columns(2)
 
 with col_graf1:
     if not df.empty:
-        top_cargos = df.groupby('Receita_Total')['Produto'].mean().nlargest(10).sort_values(ascending=True).reset_index()
-        grafico_cargos = px.bar(
-            top_cargos,
+        top_produtos = df.groupby('Produto')['Receita_Total'].mean().nlargest(10).sort_values(ascending=True).reset_index()
+        grafico_produtos = px.bar(
+            top_produtos,
             x='Receita_Total',
             y='Produto',
             orientation='h',
             title="Top 10 média de produtos mais vendidos",
             labels={'Receita_Total': 'Média de produtos vendidos', 'Produto': ''}
         )
-        grafico_cargos.update_layout(title_x=0.1, yaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(grafico_cargos, use_container_width=True)
+        grafico_produtos.update_layout(title_x=0.1, yaxis={'categoryorder':'total ascending'})
+        st.plotly_chart(grafico_produtos, use_container_width=True)
     else:
-        st.warning("Nenhum dado para exibir no gráfico de cargos.")
+        st.warning("Nenhum dado para exibir no gráfico de produtos.")
 
 with col_graf2:
     if not df.empty:
