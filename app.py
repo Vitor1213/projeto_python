@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import json
+import requests
 
 # --- Configuração da Página ---
 # Define o título da página, o ícone e o layout para ocupar a largura inteira.
@@ -17,50 +19,50 @@ df = pd.read_csv("https://github.com/Vitor1213/projeto_python/blob/main/projeto_
 st.sidebar.header("🔍 Filtros")
 
 # Filtro de Ano
-anos_disponiveis = sorted(df['ano'].unique())
+anos_disponiveis = sorted(df['Data_Venda'].unique())
 anos_selecionados = st.sidebar.multiselect("Ano", anos_disponiveis, default=anos_disponiveis)
 
-# Filtro de Senioridade
-senioridades_disponiveis = sorted(df['senioridade'].unique())
-senioridades_selecionadas = st.sidebar.multiselect("Senioridade", senioridades_disponiveis, default=senioridades_disponiveis)
+# Filtro de Clientes
+clientes_disponiveis = sorted(df['Cliente'].unique())
+clientes_selecionados = st.sidebar.multiselect("Clientes", clientes_disponiveis, default=clientes_disponiveis)
 
-# Filtro por Tipo de Contrato
-contratos_disponiveis = sorted(df['contrato'].unique())
-contratos_selecionados = st.sidebar.multiselect("Tipo de Contrato", contratos_disponiveis, default=contratos_disponiveis)
+# Filtro por Canal de Venda
+canal_vendas_disponiveis = sorted(df['Canal_Venda'].unique())
+canal_vendas_selecionados = st.sidebar.multiselect("Canal de Venda", canal_vendas_disponiveis, default=canal_vendas_disponiveis)
 
-# Filtro por Tamanho da Empresa
-tamanhos_disponiveis = sorted(df['tamanho_empresa'].unique())
-tamanhos_selecionados = st.sidebar.multiselect("Tamanho da Empresa", tamanhos_disponiveis, default=tamanhos_disponiveis)
+# Filtro por Status
+status_disponiveis = sorted(df['Status'].unique())
+status_selecionados = st.sidebar.multiselect("Status", status_disponiveis, default=status_disponiveis)
 
 # --- Filtragem do DataFrame ---
 # O dataframe principal é filtrado com base nas seleções feitas na barra lateral.
-df_filtrado = df[
-    (df['ano'].isin(anos_selecionados)) &
-    (df['senioridade'].isin(senioridades_selecionadas)) &
-    (df['contrato'].isin(contratos_selecionados)) &
-    (df['tamanho_empresa'].isin(tamanhos_selecionados))
+df = df[
+    (df['Data_Venda'].isin(anos_selecionados)) &
+    (df['Cliente'].isin(clientes_selecionados)) &
+    (df['Canal_Venda'].isin(canal_vendas_selecionados)) &
+    (df['Status'].isin(status_selecionados))
 ]
 
 # --- Conteúdo Principal ---
-st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
-st.markdown("Explore os dados salariais na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise.")
+st.title("🎲 Dashboard de Análise de Vendas")
+st.markdown("Explore os dados de vendas nos últimos anos. Utilize os filtros à esquerda para refinar sua análise.")
 
 # --- Métricas Principais (KPIs) ---
-st.subheader("Métricas gerais (Salário anual em USD)")
+st.subheader("Métricas gerais (Vendas)")
 
-if not df_filtrado.empty:
-    salario_medio = df_filtrado['usd'].mean()
-    salario_maximo = df_filtrado['usd'].max()
-    total_registros = df_filtrado.shape[0]
-    cargo_mais_frequente = df_filtrado["cargo"].mode()[0]
+if not df.empty:
+    vendas_medias = df['Receita_Total'].sum()
+    vendas_maximas = df['Receita_Total'].max()
+    total_vendas = df.shape[0]
+    canal_vendas = df["Canal_Venda"].mode()[0]
 else:
-    salario_medio, salario_mediano, salario_maximo, total_registros, cargo_mais_comum = 0, 0, 0, ""
+    vendas_medias, vendas_maximas, total_vendas, canal_vendas = 0, 0, 0, ""
 
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("Salário médio", f"${salario_medio:,.0f}")
-col2.metric("Salário máximo", f"${salario_maximo:,.0f}")
-col3.metric("Total de registros", f"{total_registros:,}")
-col4.metric("Cargo mais frequente", cargo_mais_frequente)
+col1.metric("Vendas médias", f"${vendas_medias:,.0f}")
+col2.metric("Vendas máximas", f"${vendas_maximas:,.0f}")
+col3.metric("Total de vendas", f"{total_vendas:,}")
+col4.metric("Canal de vendas mais frequente", canal_vendas)
 
 st.markdown("---")
 
@@ -70,15 +72,15 @@ st.subheader("Gráficos")
 col_graf1, col_graf2 = st.columns(2)
 
 with col_graf1:
-    if not df_filtrado.empty:
-        top_cargos = df_filtrado.groupby('cargo')['usd'].mean().nlargest(10).sort_values(ascending=True).reset_index()
+    if not df.empty:
+        top_cargos = df.groupby('Receita_Total')['Produto'].mean().nlargest(10).sort_values(ascending=True).reset_index()
         grafico_cargos = px.bar(
             top_cargos,
-            x='usd',
-            y='cargo',
+            x='Receita_Total',
+            y='Produto',
             orientation='h',
-            title="Top 10 cargos por salário médio",
-            labels={'usd': 'Média salarial anual (USD)', 'cargo': ''}
+            title="Top 10 média de produtos mais vendidos",
+            labels={'Receita_Total': 'Média de produtos vendidos', 'Produto': ''}
         )
         grafico_cargos.update_layout(title_x=0.1, yaxis={'categoryorder':'total ascending'})
         st.plotly_chart(grafico_cargos, use_container_width=True)
@@ -86,13 +88,13 @@ with col_graf1:
         st.warning("Nenhum dado para exibir no gráfico de cargos.")
 
 with col_graf2:
-    if not df_filtrado.empty:
+    if not df.empty:
         grafico_hist = px.histogram(
-            df_filtrado,
-            x='usd',
+            df,
+            x='Receita_Total',
             nbins=30,
-            title="Distribuição de salários anuais",
-            labels={'usd': 'Faixa salarial (USD)', 'count': ''}
+            title="Distribuição de vendas",
+            labels={'Receita_Total': 'Faixa de vendas', 'count': ''}
         )
         grafico_hist.update_layout(title_x=0.1)
         st.plotly_chart(grafico_hist, use_container_width=True)
@@ -102,38 +104,49 @@ with col_graf2:
 col_graf3, col_graf4 = st.columns(2)
 
 with col_graf3:
-    if not df_filtrado.empty:
-        remoto_contagem = df_filtrado['remoto'].value_counts().reset_index()
-        remoto_contagem.columns = ['tipo_trabalho', 'quantidade']
-        grafico_remoto = px.pie(
-            remoto_contagem,
-            names='tipo_trabalho',
+    if not df.empty:
+        canal_venda_contagem = df['Canal_Venda'].value_counts().reset_index()
+        canal_venda_contagem.columns = ['Categoria', 'quantidade']
+        grafico_canal_venda = px.pie(
+            canal_venda_contagem,
+            names='Categoria',
             values='quantidade',
-            title='Proporção dos tipos de trabalho',
+            title='Proporção de Vendas por Canal',
             hole=0.5
         )
-        grafico_remoto.update_traces(textinfo='percent+label')
-        grafico_remoto.update_layout(title_x=0.1)
-        st.plotly_chart(grafico_remoto, use_container_width=True)
+        grafico_canal_venda.update_traces(textinfo='percent+label')
+        grafico_canal_venda.update_layout(title_x=0.1)
+        st.plotly_chart(grafico_canal_venda, use_container_width=True)
     else:
         st.warning("Nenhum dado para exibir no gráfico dos tipos de trabalho.")
 
 with col_graf4:
-    if not df_filtrado.empty:
-        df_ds = df_filtrado[df_filtrado['cargo'] == 'Data Scientist']
-        media_ds_pais = df_ds.groupby('residencia_iso3')['usd'].mean().reset_index()
-        grafico_paises = px.choropleth(media_ds_pais,
-            locations='residencia_iso3',
-            color='usd',
-            color_continuous_scale='rdylgn',
-            title='Salário médio de Cientista de Dados por país',
-            labels={'usd': 'Salário médio (USD)', 'residencia_iso3': 'País'})
-        grafico_paises.update_layout(title_x=0.1)
-        st.plotly_chart(grafico_paises, use_container_width=True)
+    if not df.empty:
+        # Filtrar produto Notebook
+        df_ds = df[df['Produto'] == 'Notebook']
+        # Calcular média por cidade
+        media_ds_produto = df_ds.groupby('Cidade')['Quantidade'].mean().reset_index()
+        # Carregar GeoJSON com estados do Brasil
+        url = "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson"
+        geojson = requests.get(url).json()
+        # Criar gráfico
+        grafico_estados = px.choropleth(
+            media_ds_produto,
+            geojson=geojson,
+            locations='Cidade',                # Coluna do DF (sigla ex: SP, RJ)
+            featureidkey="properties.sigla",   # Nome da chave no GeoJSON
+            color='Quantidade',
+            color_continuous_scale='RdYlGn',
+            title='Quantidade média de Notebooks vendidos por Cidade',
+            labels={'Quantidade': 'Média vendida'}
+        )
+        grafico_estados.update_geos(fitbounds="locations", visible=False)
+        grafico_estados.update_layout(title_x=0.1)
+        # Mostrar no Streamlit
+        st.plotly_chart(grafico_estados, use_container_width=True)
     else:
-        st.warning("Nenhum dado para exibir no gráfico de países.")
+        st.warning("Nenhum dado para exibir no gráfico de cidades.")
 
 # --- Tabela de Dados Detalhados ---
 st.subheader("Dados Detalhados")
-st.dataframe(df_filtrado)
-st.dataframe(df_filtrado)
+st.dataframe(df)
